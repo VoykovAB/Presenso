@@ -1,0 +1,9 @@
+<ul>
+    <li ng-repeat="item in items">
+        <div class="item" ng-class="{'toggled': item.showNodes}">
+            <span ng-if="item.nodes.length > 0" ng-click="toggleChild(item)">{{item.showNodes ? '-' : '+' }}</span>
+            <a ng-class="{'no-child': item.nodes.length === 0}" href="#" ng-click="consoleItem(item)">{{item.title}}</a>
+        </div>
+        <menu-item ng-show="item.showNodes" items="item.nodes"></menu-item>
+    </li>
+</ul>
